@@ -1,0 +1,7 @@
+pt:
+  home:
+    people_date_info:
+      name: "Nome"
+      in: "Entrada"
+      out: "Saída"
+      already_out: "Já saíu"

@@ -1,0 +1,4 @@
+pt:
+  time:
+    formats:
+      common: '%Y-%m-%d'

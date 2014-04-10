@@ -1,0 +1,31 @@
+<% house_max = 4 %>
+<% actors = %w(AngelinaJolie BlakeLively ScarlettJohansson) %>
+
+<ul>
+<% @dashboard_presenter.tenants.each do |tenant| %>
+	<li style="display: inline;">
+		<div style="display: inline-block">
+			<%= image_tag "#{actors.sample}.jpg", style: 'width: 75px; height: 100px' %>
+		</div>
+		<div style="display: inline-block">
+			<span><%= tenant.name %></span></br>
+			<span>numicago@gmail.com</span></br>
+			<span>Entrou Saíu</span></br>
+			<span><%= tenant.entered_on %></span>
+			<span><%= tenant.exited_on %></span>
+		</div>
+	</li>	
+<% end %>
+
+<% if @dashboard_presenter.tenants.count < house_max %>
+	<li>
+		<div onclick="newPersonInput(this)">+</div>
+		<script>
+			function newPersonInput(element) {
+				var $element = $(element);
+				$element.parent().html("<div>Foto Nome email entrou saiu</div>");
+			}
+		</script>
+	</li>
+<% end %>
+</ul>

@@ -1,0 +1,62 @@
+<style>
+	.bills_main_info 
+		li {
+			float: left;
+			border-color: black;
+			border-width: 1px;
+			border-style: dotted;
+			div {
+			width: 100px;
+			background-color: red;
+		}
+	}
+</style>
+
+<ul class="bills_main_info">
+	<li id="water_li" data-bill="water" style="display: inline;">
+		<div>
+			<%= image_tag "KijeMAeiq.jpeg", style: "height: 30px; width: 40px" %>
+			Água
+		</div>
+		<div>
+			<input id="water_start_input" class="date_picker" type="text" placeholder="Data de início">
+			<input id="water_end_input" class="date_picker" type="text" placeholder="Data de fim">
+		</div>
+		<input type="text" placeholder="Valor da factura">
+		<label class="days"></label>
+	</li>
+
+	<li id="gas_li" data-bill="gas" style="display: inline;">
+		<div>
+			<%= image_tag "img_Gas-Icon.png", style: "height: 30px; width: 50px" %>
+			Gás
+		</div>
+		<div>
+			<input id="gas_start_input" type="text" placeholder="Data de início">
+			<input id="gas_end_input" type="text" placeholder="Data de fim">
+		</div>
+		<input type="text" placeholder="Valor da factura">
+		<label class="days"></label>
+	</li>
+	
+	<li id="electricity_li"  data-bill="electricity" style="display: inline;">
+		<div>
+			<%= image_tag "glossy-light-bulb.jpg", style: "height: 30px; width: 40px" %>
+			Electricidade
+		<div>
+		</div>
+			<input id="power_start_input" type="text" placeholder="Data de início">
+			<input id="power_end_input" type="text" placeholder="Data de fim">
+		</div>
+		<input type="text" placeholder="Valor da factura">
+		<label class="days"></label>
+	</li>
+</ul>
+
+<script>
+	$(function() {
+		$.bills.loadWater();
+		$.bills.loadGas();
+		$.bills.loadPower();
+	});
+</script>
