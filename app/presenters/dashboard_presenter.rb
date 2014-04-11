@@ -4,4 +4,8 @@ class DashboardPresenter < Presenter
 		@tenants ||= Tenant.all.map { |tenant| TenantPresenter.new(h, tenant)}
 	end
 
+	def possible_bills
+		@list ||= ["water", "gas", "power"]
+	end
+
 end

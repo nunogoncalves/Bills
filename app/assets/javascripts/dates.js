@@ -1,8 +1,23 @@
-waterStartPicker = null;
-waterEndPicker: null;
+waterStartDate = null;
+waterEndDate = null;
 
-gasStartPicker: null;
-gasEndPicker: null;
+gasStartDate = null;
+gasEndDate = null;
 
-powerStartPicker: null;
-powerEndPicker: null;
+powerStartDate = null;
+powerEndDate = null;
+
+DAY_MILLIS = 1000 * 60 * 60 * 24;
+
+function dayDiffIncludingEnd(startDate, endDate) {
+    var diff =  (Math.floor(endDate - startDate) / DAY_MILLIS) + 1;
+    return diff
+}
+
+function dateInFormat(d, separator) {
+  var curr_date = d.getDate();
+  var curr_month = d.getMonth() + 1; //Months are zero based
+  var curr_year = d.getFullYear();
+  var sep = separator === undefined ? "/" : "-"
+  return (curr_year + "/" + curr_month + "/" + curr_date);
+}

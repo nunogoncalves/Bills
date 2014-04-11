@@ -16,4 +16,5 @@
 //= require plugins/picker.date
 //= require plugins/pt_PT
 //= require dates
+//= require global
 //= require_tree .
