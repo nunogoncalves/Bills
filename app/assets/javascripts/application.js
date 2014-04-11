@@ -12,4 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require plugins/picker
+//= require plugins/picker.date
+//= require plugins/pt_PT
+//= require dates
 //= require_tree .
