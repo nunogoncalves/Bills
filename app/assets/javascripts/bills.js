@@ -5,6 +5,7 @@ $.bills = {
 	loadAllPickers: function() {
 		$.each($.bills.bills_array, function(index, bill) {
 			$("#" + bill + "_start_input, #" + bill + "_end_input").pickadate({
+				max: new Date(),
 				onSet: function(event) {
 					$.bills.afterDateSelected(this);
 				}
@@ -18,7 +19,6 @@ $.bills = {
 			 	endDate,
 			 	dates,
 			 	days,
-			 	type,
 			 	$pickerInput = $(picker.$node[0]);
 
 		$pickerInput.data("selected_date", picker.get('select', 'yyyy/mm/dd'));
@@ -65,6 +65,8 @@ $.bills = {
 		if (isNaN(days)) {
 			$pickerInput.closest("li").find("label.days").text("--- dias");
 		} else {
+			var type = $pickerInput.data("type");
+			$.highcharts.updateStartAndEndOfSeries(eval(type + "StartDate").getTime(), eval(type + "EndDate").getTime(), type);
 			$pickerInput.closest("li").find("label.days").text(days + " dias");
 		}
 	},

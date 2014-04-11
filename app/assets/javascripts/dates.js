@@ -11,7 +11,7 @@ DAY_MILLIS = 1000 * 60 * 60 * 24;
 
 function dayDiffIncludingEnd(startDate, endDate) {
     var diff =  (Math.floor(endDate - startDate) / DAY_MILLIS) + 1;
-    return diff
+    return parseInt(diff);
 }
 
 function dateInFormat(d, separator) {

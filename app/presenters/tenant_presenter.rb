@@ -27,4 +27,12 @@ class TenantPresenter < Presenter
 		was_there_this_day?(date) ? tenant.color : 'white'
 	end
 
+	def date_in_in_millis
+		tenant.date_in > 3.months.ago ? tenant.date_in.to_i * 1000 : 3.months.ago.to_i * 1000
+	end
+
+	def date_out_in_millis
+		tenant.still_in? ? DateTime.now.to_i * 1000 : tenant.date_out.to_i * 1000
+	end
+
 end

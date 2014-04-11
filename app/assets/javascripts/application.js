@@ -15,6 +15,8 @@
 //= require plugins/picker
 //= require plugins/picker.date
 //= require plugins/pt_PT
+//= require plugins/highcharts-all
+//= require highcharts
 //= require dates
 //= require global
 //= require_tree .
