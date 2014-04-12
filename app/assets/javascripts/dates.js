@@ -15,8 +15,8 @@ function dayDiffIncludingEnd(startDate, endDate) {
 }
 
 function dateInFormat(d, separator) {
-  var curr_date = d.getDate();
-  var curr_month = d.getMonth() + 1; //Months are zero based
+  var curr_date = paddWithExtraZeroIfNeeded(d.getDate());
+  var curr_month = paddWithExtraZeroIfNeeded(d.getMonth() + 1); //Months are zero based
   var curr_year = d.getFullYear();
   var sep = separator === undefined ? "/" : "-"
   return (curr_year + "/" + curr_month + "/" + curr_date);

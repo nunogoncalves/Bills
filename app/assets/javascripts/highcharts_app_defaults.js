@@ -22,12 +22,11 @@ $.highcharts_app_defaults = {
 	},
 
 	tooltip: {
+		useHTML: true,
 		formatter: function() {
-			// var yLabel = $.highcharts.physical_activities.calculateYLabelBasedOnTypeAndValue("distance", this.y);	
-			// var seriesStr = '<span style="color:' + this.points[0].series.color + '; font-weight: bold;">' + this.points[0].series.name + ': </span><strong>' + yLabel + '</strong><br/>';
-			// return this.points[0].key + '<br/>' + seriesStr;
-			var label = "De " + dateInFormat(new Date(this.series.points[0].x), "YYYY/mm/dd") + " a " + dateInFormat(new Date(this.series.points[1].y), "YYYY/mm/dd") 
-			return seriesStr = '<span style="color:' + this.series.color + '; font-weight: bold;">' + this.series.name + ': </span><strong>' + label + '</strong><br/>';
+			var image = "<img src='" + $("#tentant_" + this.series.options.tenant_id + "_image").attr("src") + "' style='width: 30px; height: 40px'>"
+			var label = " De " + dateInFormat(new Date(this.series.points[0].x), "YYYY/mm/dd") + " a " + dateInFormat(new Date(this.series.points[1].x), "YYYY/mm/dd") 
+			return seriesStr = image + '<span style="color:' + this.series.color + '; font-weight: bold;">' + this.series.name + ': </span><strong>' + label + '</strong><br/>';
 		}
 	},
 	xAxis: {
@@ -46,7 +45,7 @@ $.highcharts_app_defaults = {
 		title: {
 			text: null
 		},
-		max: 6,
+		// max: 6,
 		min: 0,
 		lineWidth: 0,
 		minorGridLineWidth: 0,

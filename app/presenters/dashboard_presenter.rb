@@ -9,7 +9,7 @@ class DashboardPresenter < Presenter
 	end
 
 	def possible_bills
-		@list ||= {"water" => "#2f7ed8", "gas" => "#0d233a", "power" => "#8bbc21"}
+		@list ||= {"water" => "#2f7ed8", "gas" => "#CC0000", "power" => "#8bbc21"}
 	end
 
 end

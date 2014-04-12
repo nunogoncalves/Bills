@@ -1,11 +1,11 @@
 <% house_max = 4 %>
-<% actors = %w(AngelinaJolie BlakeLively ScarlettJohansson) %>
+<% actors = %w(SamuelLJackson  JohnMalkovich  BradPitt  RichardGere  TobeyMaguire  VinDiesel  MartinLawrence  JohnTravolta  JimCarrey  JohnGoodman  AdamSandler  AlfredMolina  MarkWahlberg  ArnoldSchwarzenegger  EdwardNorton  DanielRadCliffe  LukeWilson  MeganFox  AlecBaldwin  MerylStreep  JohnCusack  EmilyBlunt  CharlizeTheron  RobertDuvall  JonVoight  AndyGarcia  BruceWillis  TomHanks  DennisQuaid  GeorgeClooney  KirstenDunst  AnnaFaris  AmandaPeet  EddieMurphy  GwynethPaltrow  DonCheadle  RobinWilliams  TomCruise  AlPacino  PaulBettany  KateBeckinsale  PenelopeCruz  MegRyan  NicoleKidman  EdHarris  TommyLeeJones  DustinHoffman  RachelMcAdams  DanielDay-Lewis  JenniferLoveHewitt  AndieMacDowell  SandraBullock  ReeseWitherspoon  BillyBobThorton  JessicaBiel  SigourneyWeaver  HalleBerry  JessicaAlba  ElizabethBanks  BillyCrystal  BryceDallasHoward  SteveMartin  ChristianBale  JeremyIrons  CameronDiaz  KevinSpacey  KevinKostner  BillMurray  MichaelDouglas  LiamNeeson  JohnnyDepp  ScarlettJohansson  KateWinslet  OliviaWilde  DanielCraig  RobSchneider  angelinaJolie  EmmaStone  EmmaThompson  TedDanson  JamesGandolfini  CaseyAffleck  HeatherLocklear  AnnaKendrick  ReneeZellweger  TomWilkinson  KevinKline  MaggieGrace  KatieHolmes  SteveMcQueen  LeonardoDiCaprio  JeffBridges  KirstieAlley  WillFerrell  HilaryDuff  DrewBarrymore  GaryOldman  EmbethDavidtz  LeslieMann  PaulNewman  EvangelineLilly  NaomiWatts  JasonBiggs  MenaSuvari  JasonStatham  GlennClose  SalmaHayek  DonaldSutherland  CateBlanchett  RalphFiennes  KeiraKnightley  JamesStewart  WoodyHarrelson  DannyDeVito  RussellCrowe  PaulWalker  HeathLedger  ClintEastwood  SylvesterStallone  MorganFreeman  AmyAdams  AnthonyHopkins  WillSmith  AliciaSilverstone  MattDamon  SethGreen  SamNeil  PaulDano  SteveZahn  ChristopherPlummer  MickeyRourke  SusanSarandon  TimothyOlyphant  RainnWilson  NicolasCage  JamesFranco  HarrisonFord  JakeGyllenhaal  JudeLaw  TimMeadows  DemiMoore  CatherineKeener  BenAffleck  AnneHathaway  MelGibson  JackNicholson  MarisaTomei  EvaMendes  RayLiotta  JuliaRoberts  ChristopherWalken  VinceVaughn  CliveOwen  JenniferGarner  BridgetteWilson-Sampras  SteveCarell  SarahMichelleGellar  CatherineZeta-Jones  JamesRemar  JackBlack  ClaireForlani  StanleyTucci  RyanReynolds  JamieLeeCurtis  EwanMcGregor  BenStiller  ChristinaRicci  RachelWeisz  RowanAtkinson  PaulGiamatti  LuisGuzman  EvaLongoria  ElizaDushku  EmileHirsch  MichaelCaine  JamesWoods  ClaireDanes  SeanPenn  AlanArkin  WillemDafoe  JodieFoster  ToniCollette  MargHelgenberger  MichellePfeiffer  BlakeLively  KeanuReeves  JenniferConnelly  ValKilmer  GeneHackman  RobertRedford  AntonioBanderas  HankAzaria  AshleyJudd  KristinScottThomas  OwenWilson  QueenLatifah  StellanSkarsgard  ElishaCuthbert  JeanClaudeVanDamme  TeaLeoni  JackieChan  JenniferAniston  JosephGordonLevitt  DenzelWashington  ColinFarrell  MandyMoore  CarrieAnneMoss  CubaGoodingJr ) %>
 
-<ul>
+<ul class="people_list">
 <% @dashboard_presenter.tenants.each do |tenant| %>
-	<li style="display: inline; background: <%= tenant.color %>" class="person" data-tenant_in="<%= tenant.entered_on %>" data-tenant_out="<%= tenant.really_exited_on %>" data-tenant_id="<%= tenant.id %>" data-name="<%= tenant.name %>">
+	<li style="background: <%= tenant.color %>" class="person" data-tenant_in="<%= tenant.entered_on %>" data-tenant_out="<%= tenant.really_exited_on %>" data-tenant_id="<%= tenant.id %>" data-name="<%= tenant.name %>">
 		<div style="display: inline-block">
-			<%= image_tag "#{actors.sample}.jpg", style: 'width: 75px; height: 100px' %>
+			<%#= image_tag "#{actors.sample}.jpg", id: "tentant_#{tenant.id}_image", style: 'width: 75px; height: 100px' %>
 		</div>
 		<div style="display: inline-block">
 			<span><%= tenant.name %></span></br>
@@ -14,6 +14,10 @@
 			<span><%= tenant.entered_on %></span>
 			<span><%= tenant.really_exited_on %></span></br>
 			<span>Total a pagar: </span>
+		</div>
+		<div>
+			<%#= image_tag "#{actors.sample}.jpg", id: "tentant_#{tenant.id}_image" %>
+			<%= image_tag "https://dl.dropboxusercontent.com/u/2001692/actor/#{actors.sample}.jpg", id: "tentant_#{tenant.id}_image" %>
 		</div>
 	</li>	
 <% end %>
