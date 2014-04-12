@@ -7,19 +7,18 @@
 		<div style="display: inline-block">
 			<%#= image_tag "#{actors.sample}.jpg", id: "tentant_#{tenant.id}_image", style: 'width: 75px; height: 100px' %>
 		</div>
-		<div style="display: inline-block">
-			<span><%= tenant.name %></span></br>
-			<span>numicago@gmail.com</span></br>
-			<span>Entrou Saíu</span></br>
-			<span><%= tenant.entered_on %></span>
-			<span><%= tenant.really_exited_on %></span></br>
-			<span>Total a pagar: </span>
+		<div>
+			<div><%= tenant.name %></div>
+			<div>numicago@gmail.com</div>
+			<div>Entrou Saíu</div>
+			<div><%= tenant.entered_on %> <%= tenant.really_exited_on %></div>
+			<div>Total a pagar: </div>
 		</div>
 		<div>
 			<%#= image_tag "#{actors.sample}.jpg", id: "tentant_#{tenant.id}_image" %>
 			<%= image_tag "https://dl.dropboxusercontent.com/u/2001692/actor/#{actors.sample}.jpg", id: "tentant_#{tenant.id}_image" %>
 		</div>
-	</li>	
+	</li>
 <% end %>
 
 <% if @dashboard_presenter.tenants.count < house_max %>

@@ -3,17 +3,11 @@
 	font-family: Arial;
 }
 
-.bills_main_info 
-	li {
-		float: left;
-		border-color: black;
-		border-width: 1px;
-		border-style: dotted;
-		div {
-		width: 100px;
-		background-color: red;
-	}
-
+.bills_main_info li {
+	float: left;
+	border-color: black;
+	border-width: 1px;
+	border-style: dotted;
 }
 
 .people_list li {

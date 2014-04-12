@@ -18,5 +18,6 @@
 //= require plugins/highcharts-all
 //= require highcharts
 //= require dates
+//= require people
 //= require global
 //= require_tree .
