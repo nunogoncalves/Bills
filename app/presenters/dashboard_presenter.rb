@@ -4,8 +4,12 @@ class DashboardPresenter < Presenter
 		@tenants ||= Tenant.all.map { |tenant| TenantPresenter.new(h, tenant)}
 	end
 
+	def possible_bills_names
+		possible_bills.map{|x| x[0]}
+	end
+
 	def possible_bills
-		@list ||= ["water", "gas", "power"]
+		@list ||= {"water" => "#2f7ed8", "gas" => "#0d233a", "power" => "#8bbc21"}
 	end
 
 end

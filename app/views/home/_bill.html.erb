@@ -1,13 +1,15 @@
-<li id="<%= bill %>_li" data-bill="<%= bill %>" style="display: inline;">
+<% color = bill[1] %>
+<% bill = bill[0] %>
+<li id="<%= bill %>_li" data-bill="<%= bill %>" style="display: inline; background-color: <%= color %>; color: white">
 	<div>
 		<%= image_tag "#{bill}.png", style: "height: 30px; width: 40px" %>
 		<%= bill %>
 	</div>
 	<div>
-		<input id="<%= bill %>_start_input" class="<%= bill %> start" data-type="<%= bill %>" data-selected_date="" type="text" placeholder="Data de início">
-		<input id="<%= bill %>_end_input" class="<%= bill %> end" data-type="<%= bill %>"  data-selected_date="" type="text" placeholder="Data de fim">
+		<input id="<%= bill %>_start_input" class="<%= bill %> start datepicker" data-type="<%= bill %>" data-selected_date="" type="text" placeholder="Data de início">
+		<input id="<%= bill %>_end_input" class="<%= bill %> end datepicker" data-type="<%= bill %>"  data-selected_date="" type="text" placeholder="Data de fim">
 	</div>
 	<input class="price_input" data-type="<%= bill %>" type="text" placeholder="Valor da factura" onKeyUp="$.bills.billPriceChanged(this);">
 	<label class="days">--- dias</label>
-	<label class="price_per_day_label">--- €/dia</label>
+	<label class="price_per_day_label <%= bill %>" data-value="">--- €/dia</label>
 </li>

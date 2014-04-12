@@ -6,7 +6,7 @@
 
 <script>
 	$(function() {
-		$.bills.bills_array = <%= raw @dashboard_presenter.possible_bills %>;
+		$.bills.bills_array = <%= raw @dashboard_presenter.possible_bills_names %>;
 		$.bills.loadAllPickers();
 	});
 </script>

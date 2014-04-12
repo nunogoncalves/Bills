@@ -7,40 +7,33 @@
 		<% @dashboard_presenter.tenants.each_with_index do |tenant, i| %>
 			var tenant_series = {
 				name: '<%= tenant.name %>',
+				color: '<%= tenant.color %>',
 				data: [[<%= tenant.date_in_in_millis %>, <%= i + 1 + 2 + 0.1 %>, <%= i + 1 + 3 -0.1 %>],[<%= tenant.date_out_in_millis %>, <%= i + 1 + 2 + 0.1 %>, <%= i + 1 + 3 - 0.1 %>]]
 			}
 			series.push(tenant_series);
 		<% end %>
 
 		
-		var d1 = new Date(2014, 1, 1);
-		var d2 = new Date(2014, 2, 1);
+		var d1 = new Date(2014, 3, 1);
 
-		var powerSeries = {
-				name: 'power',
-				data: [[d1.getTime(), 0, 1],[d2.getTime(), 0, 1]]
-		}
-
-		series.push(powerSeries);
-
-		var d3 = new Date(2014, 2, 5);
-		var d4 = new Date(2014, 3, 4);
 		var waterSeries = {
 				name: 'water',
-				data: [[d3.getTime(), 1, 2],[d4.getTime(), 1, 2]]
+				data: [[d1.getTime(), 0, 1],[d1.getTime(), 0, 1]]
+		}
+
+		var gasSeries = {
+				name: 'gas',
+				data: [[d1.getTime(), 1, 2],[d1.getTime(), 1, 2]]
+		}
+		
+		var powerSeries = {
+				name: 'power',
+				data: [[d1.getTime(), 2, 3],[d1.getTime(), 2, 3]]
 		}
 
 		series.push(waterSeries);
-
-		var d5 = new Date(2014, 1, 17);
-		var d6 = new Date(2014, 3, 19);
-		var tenantsCount = <%= @dashboard_presenter.tenants.count %>
-		var gasSeries = {
-				name: 'gas',
-				data: [[d5.getTime(), 2, 3],[d6.getTime(), 2, 3]]
-		}
-
 		series.push(gasSeries);
+		series.push(powerSeries);
 		
 		seriesOptions = {
 			series: series,

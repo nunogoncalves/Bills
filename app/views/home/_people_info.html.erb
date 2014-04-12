@@ -3,7 +3,7 @@
 
 <ul>
 <% @dashboard_presenter.tenants.each do |tenant| %>
-	<li style="display: inline;">
+	<li style="display: inline; background: <%= tenant.color %>" class="person" data-tenant_in="<%= tenant.entered_on %>" data-tenant_out="<%= tenant.really_exited_on %>" data-tenant_id="<%= tenant.id %>" data-name="<%= tenant.name %>">
 		<div style="display: inline-block">
 			<%= image_tag "#{actors.sample}.jpg", style: 'width: 75px; height: 100px' %>
 		</div>
@@ -12,7 +12,7 @@
 			<span>numicago@gmail.com</span></br>
 			<span>Entrou Saíu</span></br>
 			<span><%= tenant.entered_on %></span>
-			<span><%= tenant.exited_on %></span></br>
+			<span><%= tenant.really_exited_on %></span></br>
 			<span>Total a pagar: </span>
 		</div>
 	</li>	

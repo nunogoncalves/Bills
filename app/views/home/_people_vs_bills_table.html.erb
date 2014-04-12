@@ -1,0 +1,25 @@
+<table border="1px">
+		<tr>
+			<td></td>
+			<% @dashboard_presenter.possible_bills_names.each do |bill| %>
+				<td><%= bill %></td>
+			<% end %>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+		<% @dashboard_presenter.tenants.each do |tenant| %>
+		<tr>
+			<td><%= tenant.name %></td>
+			<% @dashboard_presenter.possible_bills_names.each do |bill| %>
+				<td class='<%= "#{bill} tenant_#{tenant.id}" %>'></td>
+			<% end %>
+			<td class='<%= "total_tenant_#{tenant.id}" %>'></td>
+		</tr>
+		<% end %>
+		<tr>
+				<td class="total">&nbsp;</td>
+			<% @dashboard_presenter.possible_bills_names.each do |bill| %>
+				<td class="<%= "total_#{bill}" %>"></td>
+			<% end %>
+			<td class="total_bills"></td>
+		</tr>
+</table>

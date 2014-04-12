@@ -18,8 +18,18 @@ $.highcharts_app_defaults = {
 	chart: {
 		renderTo: "chart", //For this to work, we need to have a element with chart id in the page.
 		type: "arearange",
+		title: "",
 	},
 
+	tooltip: {
+		formatter: function() {
+			// var yLabel = $.highcharts.physical_activities.calculateYLabelBasedOnTypeAndValue("distance", this.y);	
+			// var seriesStr = '<span style="color:' + this.points[0].series.color + '; font-weight: bold;">' + this.points[0].series.name + ': </span><strong>' + yLabel + '</strong><br/>';
+			// return this.points[0].key + '<br/>' + seriesStr;
+			var label = "De " + dateInFormat(new Date(this.series.points[0].x), "YYYY/mm/dd") + " a " + dateInFormat(new Date(this.series.points[1].y), "YYYY/mm/dd") 
+			return seriesStr = '<span style="color:' + this.series.color + '; font-weight: bold;">' + this.series.name + ': </span><strong>' + label + '</strong><br/>';
+		}
+	},
 	xAxis: {
 		type: 'datetime',
 		labels: {
@@ -28,11 +38,8 @@ $.highcharts_app_defaults = {
 				// return this.value;
 			}
 		},
-		lineWidth: 0,
-		minorGridLineWidth: 0,
-		lineColor: 'transparent',
-		minorTickLength: 0,
-   	tickLength: 0,
+    tickmarkPlacement: 'on',
+    gridLineWidth: 1
 	},
 
 	yAxis: {
