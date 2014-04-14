@@ -1,0 +1,12 @@
+<span class="tenants_container">
+	<% @dashboard_presenter.tenants.each do |tenant| %>
+		<div style="background: <%= tenant.color %>" class="tenant">
+			<!-- <div><%#= tenant.name %></div>
+				<div>numicago@gmail.com</div>
+				<div>Entrou Saíu</div>
+				<div><%#= tenant.entered_on %> <%= tenant.really_exited_on %></div>
+				<div>Total a pagar: </div>-->
+				<%= image_tag @dashboard_presenter.tenant_sample_image, id: "tentant_#{tenant.id}_image" %> 
+		</div>
+	<% end %>
+</span>

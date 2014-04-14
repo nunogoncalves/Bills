@@ -1,0 +1,79 @@
+<style>
+	.bills_balls {
+		color: black;
+		display:table;
+		margin:0 auto;
+		margin-top: 25px;
+		margin-bottom: 50px;
+	}
+
+	.bills_balls li {
+		display: inline-block;
+		height: 200px;
+		width: 200px;
+		border-radius: 50%;
+		margin-left: 10px;
+		margin-right: 10px;
+		position: relative;
+		z-index: -2
+	}
+
+	input {
+		border-right: 4px;
+		border: 1px solid #CCC;
+		padding: 4px 12px;
+		border-radius: 8px;
+		-webkit-appearance: none;
+		width: 100px;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		font-size: 12px;
+	}
+
+	span {
+		color: white;
+	}
+
+</style>
+
+<ul class="bills_balls">
+	<li style="background: #03BAF6">
+		<img style="z-index: -1; position: absolute; margin-left: 60px; margin-top: 60px" src="https://cdn1.iconfinder.com/data/icons/large-weather-icons/512/Dew.png">
+		<div style="height: 200px; z-index:1">
+			<div style="margin-top: 40px">
+				<span style="margin-left: 40%">Água</span>
+				<input type="text">
+				<input style="z-index: 1200000000" type="text" value="20 de Dezembro de 2014">
+				<span style="margin-left: 10px">31 dias</span>
+				<span style="float: right; margin-right: 10px">1.54€/dia</span>
+			</div>
+		</div>
+	</li>
+
+	<li style="background: #E2B025">
+		<img style="z-index: -1; position: absolute; margin-left: 60px; margin-top: 60px" src="http://www.clker.com/cliparts/R/W/B/C/B/d/red-flame-md.png">
+		<div style="height: 200px; z-index:1">
+			<div style="margin-top: 40px">
+				<span style="margin-left: 40%">Gás</span>
+				<input type="text">
+				<input style="z-index: 1200000000" type="text" value="20 de Dezembro de 2014">
+				<span style="margin-left: 10px">31 dias</span>
+				<span style="float: right; margin-right: 10px">1.54€/dia</span>
+			</div>
+		</div>
+	</li>
+
+	<li style="background: #E2B025">
+		<img style="z-index: -1; position: absolute; margin-left: 60px; margin-top: 60px" src="https://cdn3.iconfinder.com/data/icons/dev-toolpack/512/light-512.png">
+		<div style="height: 200px; z-index:1">
+			<div style="margin-top: 26px">
+				<span style="margin-left: 40%">Electricidade</span>
+				<input type="text">
+				<input style="z-index: 1200000000" class="datepicker" type="text" value="20 de Dezembro de 2014">
+				<span style="margin-left: 10px">31 dias</span>
+				<span style="float: right; margin-right: 10px">1.54€/dia</span>
+			</div>
+		</div>
+	</li>
+</ul>
