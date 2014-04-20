@@ -1,10 +1,11 @@
-<div id="chart" style="width: 600px; height: 300px; padding-bottom: 140px"></div>
+<div style="position: absolute; height: 1px; width: 600px; margin-top: 187px; background-color: black; z-index: 1"></div>
+<div id="chart"></div>
 
 <script>
 	$(function() {
 		var series = [];
 		var tenantsCount = <%= @dashboard_presenter.tenants.count %>
-		<% @dashboard_presenter.tenants.each_with_index do |tenant, i| %>
+		<% @dashboard_presenter.tenants.reverse.each_with_index do |tenant, i| %>
 			var tenant_series = {
 				name: '<%= tenant.name %>',
 				color: '<%= tenant.color %>',
@@ -16,9 +17,10 @@
 
 		
 		var d1 = new Date(2014, 3, 1);
-
-		var waterSeries = {
-				name: 'water',
+		
+		var powerSeries = {
+				name: 'power',
+				color: "#e2b025",
 				data: [[d1.getTime(), 0, 1],[d1.getTime(), 0, 1]]
 		}
 
@@ -27,15 +29,16 @@
 				color: "#CC0000",
 				data: [[d1.getTime(), 1, 2],[d1.getTime(), 1, 2]]
 		}
-		
-		var powerSeries = {
-				name: 'power',
+
+		var waterSeries = {
+				name: 'water',
+				color: "#03baf6",
 				data: [[d1.getTime(), 2, 3],[d1.getTime(), 2, 3]]
 		}
 
-		series.push(waterSeries);
-		series.push(gasSeries);
 		series.push(powerSeries);
+		series.push(gasSeries);
+		series.push(waterSeries);
 		
 		seriesOptions = {
 			series: series,

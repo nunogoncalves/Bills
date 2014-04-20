@@ -3,31 +3,6 @@
 	font-family: Arial;
 }
 
-.bills_main_info li {
-	float: left;
-	border-color: black;
-	border-width: 1px;
-	border-style: dotted;
-}
-
-.people_list li {
-		display: inline-block;
-	}
-
-	img {
-		width: 75px;
-		height: 100px;
-	}
-
-.datepicker:hover {
-	cursor: pointer;
-}
-
-
-.section {
-	color: #FFF;
-}
-
 @mixin arrow($color) {
   width: 0; 
 	height: 0; 
@@ -97,14 +72,67 @@
 
 .section_3 {
 	position: relative;
-	height: 50px;
+	height: 165px;
+	margin-bottom: 50px;
+	& .arrow {
+		position: absolute;
+		margin-left: 48%;
+		bottom: -70px;
+		@include arrow(#FFF);
+	}	
+}
+
+.section_4 {
+	background: #529123;
+	position: relative;
+	height: 315px;
 	margin-bottom: 50px;
 	& .arrow {
 		position: absolute;
 		margin-left: 45%;
 		bottom: -20px;
 		@include arrow(#FFF);
-	}	
+	}
+
+	table { 
+		color: #333;
+		font-family: Helvetica, Arial, sans-serif;
+		width: 400px; 
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 14px;
+		border-collapse: collapse; 
+		border-spacing: 0; 
+	}
+
+	td, th { 
+		border: 1px solid transparent;
+		height: 30px; 
+		transition: all 0.3s;
+	}
+
+	th {
+		background: #DFDFDF;
+		font-weight: bold;
+	}
+
+	td {
+		background: #FAFAFA;
+		text-align: center;
+	}
+
+	tr:nth-child(even) td { background: #61923D; }   
+
+	tr:nth-child(odd) td { background: #4A9016; }  
+
+	tr td:hover { background: #666; color: #FFF; }
+
+	#chart {
+		width: 600px; 
+		height: 300px; 
+		padding-top: 21px; 
+		margin-left: 21px;
+	}
 }
 
 .footer {
@@ -116,7 +144,7 @@
 	& .arrow {
 		position: absolute;
 		margin-left: 47.35%;
-		@include arrow(#FFF);
+		@include arrow(#529123);
 	}
 
 	.email {

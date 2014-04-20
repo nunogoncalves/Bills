@@ -1,21 +1,3 @@
-<!-- <div>
-	<%#= render "people_info" %>
-	<%#= image_tag "http://icons.iconarchive.com/icons/limav/flat-gradient-social/512/email-icon.png", style: "width: 25px; height: 25px", onclick: "$.people.sendEmail();" %>
-</div>
-
-<div>
-	<%#= render 'bills_info' %>
-</div>
-
-<div>
-	<%#= render 'people_vs_bills_table' %>
-</div>
-
-<div>
-	<%#= render 'chart' %>
-</div>
- -->
-
  <div class="section section_1">
  	<div class="arrow"></div>
  	<div class="top_container">Gestão de contas para senhorios.</div>
@@ -23,17 +5,22 @@
 
  <div class="section section_2">
  	<div class="arrow"></div>
- 		<%#= render 'people' %>
- 		<%= render 'circle-effects' %>
+ 		<%= render 'tenants/list' %>
  </div>
 
-<button>botão</button>
- 
  <div class="section section_3">
-	<%#= render 'bills_info' %>
-	<%= render 'bills_balls' %>
-	<%#= render 'chart' %>
+ 	<div class="arrow"></div>
+	<%= render 'bills/list' %>
  </div>
+
+	<div class="section section_4">
+		<div style="display: inline-block">
+			<%= render 'chart' %>
+		</div>
+		<div style="display: inline-block; width: 48%; height: 100%">
+			<%= render 'people_vs_bills_table' %>
+		</div>
+	</div>
 
  <div class="section footer">
  	<div class="arrow"></div>

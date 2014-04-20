@@ -17,8 +17,8 @@ class DashboardPresenter < Presenter
 			RussellCrowe  PaulWalker  HeathLedger  ClintEastwood  SylvesterStallone  MorganFreeman  AmyAdams  AnthonyHopkins  WillSmith  AliciaSilverstone
 			MattDamon  SethGreen  SamNeil  PaulDano  SteveZahn  ChristopherPlummer  MickeyRourke  SusanSarandon  TimothyOlyphant  RainnWilson  NicolasCage
 			JamesFranco  HarrisonFord  JakeGyllenhaal  JudeLaw  TimMeadows  DemiMoore  CatherineKeener  BenAffleck  AnneHathaway  MelGibson  JackNicholson  MarisaTomei  EvaMendes
-			RayLiotta  JuliaRoberts  ChristopherWalken  VinceVaughn  CliveOwen  JenniferGarner  BridgetteWilson-Sampras  SteveCarell  SarahMichelleGellar  CatherineZeta-
-			Jones  JamesRemar  JackBlack  ClaireForlani  StanleyTucci  RyanReynolds  JamieLeeCurtis  EwanMcGregor  BenStiller  ChristinaRicci  RachelWeisz  RowanAtkinson
+			RayLiotta  JuliaRoberts  ChristopherWalken  VinceVaughn  CliveOwen  JenniferGarner  BridgetteWilson-Sampras  SteveCarell  SarahMichelleGellar  CatherineZeta-Jones 
+			JamesRemar  JackBlack  ClaireForlani  StanleyTucci  RyanReynolds  JamieLeeCurtis  EwanMcGregor  BenStiller  ChristinaRicci  RachelWeisz  RowanAtkinson
 			PaulGiamatti  LuisGuzman  EvaLongoria  ElizaDushku  EmileHirsch  MichaelCaine  JamesWoods  ClaireDanes  SeanPenn  AlanArkin  WillemDafoe
 			JodieFoster  ToniCollette  MargHelgenberger  MichellePfeiffer  BlakeLively  KeanuReeves  JenniferConnelly  ValKilmer  GeneHackman
 			RobertRedford  AntonioBanderas  HankAzaria  AshleyJudd  KristinScottThomas  OwenWilson  QueenLatifah  StellanSkarsgard  ElishaCuthbert
