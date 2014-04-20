@@ -65,11 +65,14 @@ $.bills = {
 
 	updateDaysBetweenDatesLabel: function(days, $pickerInput) {
 		if (isNaN(days)) {
-			$pickerInput.closest("li").find("label.days").text("--- dias");
+			$pickerInput.closest("li").find("span.days").text("--- dias");
 		} else {
 			var type = $pickerInput.data("type");
-			$.highcharts.updateStartAndEndOfSeries(eval(type + "StartDate").getTime(), eval(type + "EndDate").getTime(), type);
-			$pickerInput.closest("li").find("label.days").text(days + " dias");
+			var sTimeMilis = eval(type + "StartDate").getTime();
+			var endTime = eval(type + "EndDate");
+			endTime.setHours(23, 59, 59, 999);
+			$.highcharts.updateStartAndEndOfSeries(sTimeMilis, endTime.getTime(), type);
+			$pickerInput.closest("li").find("span.days").text(days + " dias");
 		}
 	},
 
@@ -78,12 +81,12 @@ $.bills = {
 				pricePerDay;
 
 		if (isNaN(days)) {
-			$pickerInput.closest("li").find("input.price_per_day_label").val('--- €/dia');
+			$pickerInput.closest("li").find("span.price_per_day_span").val('--- €/dia');
 		} else {
 			billPrice = parseFloat($pickerInput.closest("li").find("input.price_input").val());
 			pricePerDay = (billPrice / days).toFixed(2);
-			$pickerInput.closest("li").find("label.price_per_day_label").text(pricePerDay + "€/dia");
-			$pickerInput.closest("li").find("label.price_per_day_label").data("value", pricePerDay);
+			$pickerInput.closest("li").find("span.price_per_day_span").text(pricePerDay + "€/dia");
+			$pickerInput.closest("li").find("span.price_per_day_span").data("value", pricePerDay);
 			$.bills.calculateTotalForTenants();
 		}	
 	},
@@ -114,7 +117,7 @@ $.bills = {
 				totalPerson = totalPerson + (isNaN(parseFloat($(tenantCell).text())) ? 0.00 : parseFloat($(tenantCell).text()));
 			})
 			if (!isNaN(totalPerson)) {
-				$(".total_tenant_" + $liPerson.data("tenant_id")).text(totalPerson.toFixed(2));
+				$("#total_tenant_" + $liPerson.data("tenant_id")).text(totalPerson.toFixed(2));
 			}
 		});
 	},
@@ -130,7 +133,7 @@ $.bills = {
 	    if (tenantIn <= billDate && tenantOut >= billDate) { //tenant is there
 	    	console.log("No dia " + dateInFormat(billDate) + " da " + bill + " está lá")
 	      var peopleInDate = $.bills.getHowManyPeopleInDate(billDate);
-	      var billPerDay = $("label.price_per_day_label." + bill).data("value");
+	      var billPerDay = $("span.price_per_day_span." + bill).data("value");
 	      totalToPay = totalToPay + (parseFloat(billPerDay) / peopleInDate);
 	      console.log("totalToPay + (parseFloat(billPerDay) / peopleInDate)");
 	      	console.log("" + totalToPay + "+" + (parseFloat(billPerDay) + "/" + peopleInDate) +"="+ totalToPay);

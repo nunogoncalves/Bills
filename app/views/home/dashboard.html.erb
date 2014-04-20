@@ -1,18 +1,29 @@
-<div>
-	<%= render "people_info" %>
-	<%= image_tag "http://icons.iconarchive.com/icons/limav/flat-gradient-social/512/email-icon.png", style: "width: 25px; height: 25px", onclick: "$.people.sendEmail();" %>
-</div>
+ <div class="section section_1">
+ 	<div class="arrow"></div>
+ 	<div class="top_container">Gestão de contas para senhorios.</div>
+ </div>
 
-<div>
-	<%= render 'bills_info' %>
-</div>
+ <div class="section section_2">
+ 	<div class="arrow"></div>
+ 		<%= render 'tenants/list' %>
+ </div>
 
-<div>
-	<%= render 'people_vs_bills_table' %>
-</div>
+ <div class="section section_3">
+ 	<div class="arrow"></div>
+	<%= render 'bills/list' %>
+ </div>
 
-<div>
-	<%= render 'chart' %>
-</div>
+	<div class="section section_4">
+		<div style="display: inline-block">
+			<%= render 'chart' %>
+		</div>
+		<div style="display: inline-block; width: 48%; height: 100%">
+			<%= render 'people_vs_bills_table' %>
+		</div>
+	</div>
 
-
+ <div class="section footer">
+ 	<div class="arrow"></div>
+ 	<div>Desenvolvido por: Nuno Gonçalves</div>
+ 	<div class="email">numicago@gmail.com</div>
+ </div>

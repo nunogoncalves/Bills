@@ -1,12 +1,11 @@
-<ul class="bills_main_info">
+<ul class="bills_list">
 	<% @dashboard_presenter.possible_bills.each do |bill| %>
-		<%= render 'bill', bill: bill %>
+		<%= render 'bills/bill', bill: bill %>
 	<% end %>
 </ul>
-
-<script>
+ul><script>
 	$(function() {
 		$.bills.bills_array = <%= raw @dashboard_presenter.possible_bills_names %>;
-		$.bills.loadAllPickers();
-	});
+		$.bills.loadAllPickers();		
+	})
 </script>

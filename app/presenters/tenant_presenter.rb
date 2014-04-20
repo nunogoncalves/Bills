@@ -15,6 +15,10 @@ class TenantPresenter < Presenter
 		tenant.name
 	end
 
+	def email
+		tenant.email
+	end
+
 	def entered_on
 		# I18n.l(tenant.date_in, format: :common)
 		tenant.date_in

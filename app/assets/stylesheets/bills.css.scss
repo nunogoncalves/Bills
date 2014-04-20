@@ -1,0 +1,64 @@
+@mixin bill_li_background($color, $url) {
+  background: $color; 
+	background-image: $url;
+	background-size: 136px 153px;
+	background-repeat: no-repeat;
+	background-position:center; 
+}
+
+.bills_list {
+	color: black;
+	display:table;
+	margin:0 auto;
+	margin-top: 25px;
+	margin-bottom: 50px;
+
+	& li {
+		display: inline-block;
+		height: 200px;
+		width: 200px;
+		border-radius: 50%;
+		margin-left: 10px;
+		margin-right: 10px;
+		position: relative;
+
+		&.water {
+			@include bill_li_background(#03BAF6, url(https://cdn1.iconfinder.com/data/icons/large-weather-icons/512/Dew.png))
+		}
+
+		&.gas {
+			@include bill_li_background(#DDDDDD, url(http://www.clker.com/cliparts/R/W/B/C/B/d/red-flame-md.png))
+		}
+
+		&.power {
+			@include bill_li_background(#E2B025, url(https://cdn3.iconfinder.com/data/icons/dev-toolpack/512/light-512.png))
+		}
+		
+		& .datepicker:hover {
+		cursor: pointer;
+		}
+	}
+
+	input {
+		border-right: 4px;
+		border: 1px solid #CCC;
+		padding: 4px 12px;
+		border-radius: 8px;
+		-webkit-appearance: none;
+		width: 100px;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		font-size: 11px;
+		margin-bottom: 10px;
+	}
+
+	span {
+		// color: white;
+	}
+
+	.picker {
+		width: 150%;
+	}
+
+}
