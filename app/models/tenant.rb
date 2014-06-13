@@ -1,8 +1,8 @@
 class Tenant < Person
 
 	def still_in?
-		date_out > DateTime.now
-	end	
+    date_out.blank? || date_out > DateTime.now
+	end
 
 	def was_there_this_day?(day)
   	if day < date_in.to_date
@@ -10,7 +10,7 @@ class Tenant < Person
   	else
   		if date_out.nil?
   			return true
-  		else 
+  		else
   			return day <= date_out.to_date
 	  	end
 	  end

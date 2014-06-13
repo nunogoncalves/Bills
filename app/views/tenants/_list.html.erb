@@ -2,12 +2,12 @@
   <ul class="ch-grid">
       <% @dashboard_presenter.tenants.each_with_index do |tenant, i| %>
       <li class="person" data-tenant_id="<%= tenant.id %>" data-name="<%= tenant.name %>" data-tenant_in="<%= tenant.entered_on %>" data-tenant_out="<%= tenant.really_exited_on %>">
-        <div class="ch-item"> 
+        <div class="ch-item">
           <div class="ch-info">
             <h3><%= tenant.name %></h3>
             <p><%= tenant.email %></p>
             <p>Entrou a <%= tenant.entered_on %></p>
-            <p>Ainda não saiu</p>
+            <p><%= tenant.exited_on %></p>
           </div>
           <div class="ch-thumb ch-img-1" <!-- style="background-image: url(<%= @dashboard_presenter.tenant_sample_image %>)" -->>
             <p id="total_tenant_<%= tenant.id %>"style="margin-top: 162px; font-size: 40px; opacity: 0.4"></p></div>

@@ -4,4 +4,5 @@ pt:
       name: "Nome"
       in: "Entrada"
       out: "Saída"
+      still_in: "Ainda não saíu"
       already_out: "Já saíu"

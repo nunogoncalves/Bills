@@ -22,7 +22,7 @@ $.bills = {
 			 	$pickerInput = $(picker.$node[0]);
 
 		$pickerInput.data("selected_date", picker.get('select', 'yyyy/mm/dd'));
-		
+
 		dates = $.bills.buildDates(picker, $pickerInput);
 		days = dayDiffIncludingEnd(dates[0], dates[1]);
 		$.bills.updateDaysBetweenDatesLabel(days, $pickerInput);
@@ -84,17 +84,17 @@ $.bills = {
 			$pickerInput.closest("li").find("span.price_per_day_span").val('--- €/dia');
 		} else {
 			billPrice = parseFloat($pickerInput.closest("li").find("input.price_input").val());
-			pricePerDay = (billPrice / days).toFixed(2);
-			$pickerInput.closest("li").find("span.price_per_day_span").text(pricePerDay + "€/dia");
-			$pickerInput.closest("li").find("span.price_per_day_span").data("value", pricePerDay);
+			pricePerDayText = (billPrice / days).toFixed(2);
+			pricePerDayValue = (billPrice / days);
+			$pickerInput.closest("li").find("span.price_per_day_span").text(pricePerDayText + "€/dia");
+			$pickerInput.closest("li").find("span.price_per_day_span").data("value", pricePerDayValue);
 			$.bills.calculateTotalForTenants();
-		}	
+		}
 	},
 
 	calculateTotalForTenants: function() {
 		$.each($("li.person"), function(index, liPerson) {
 			var $liPerson = $(liPerson);
-			console.log("------------------------> " + $liPerson.data("name") + " <------------------------")
 			$.each($.bills.bills_array, function(index, bill) {
 				var billStartDate = eval(bill + "StartDate");
 				var billEndDate = eval(bill + "EndDate");
@@ -129,14 +129,11 @@ $.bills = {
 	  for (var billDate = new Date(billStartDate.getTime()); billDate <= billEndDate; billDate.setDate(billDate.getDate() + 1)) {
 	  	if (tenantIn > billDate) {
 	  		continue;
-	  	} 
+	  	}
 	    if (tenantIn <= billDate && tenantOut >= billDate) { //tenant is there
-	    	console.log("No dia " + dateInFormat(billDate) + " da " + bill + " está lá")
 	      var peopleInDate = $.bills.getHowManyPeopleInDate(billDate);
 	      var billPerDay = $("span.price_per_day_span." + bill).data("value");
 	      totalToPay = totalToPay + (parseFloat(billPerDay) / peopleInDate);
-	      console.log("totalToPay + (parseFloat(billPerDay) / peopleInDate)");
-	      	console.log("" + totalToPay + "+" + (parseFloat(billPerDay) + "/" + peopleInDate) +"="+ totalToPay);
 	    }
 
 	    if (tenantOut < billDate) {
@@ -158,10 +155,10 @@ $.bills = {
 	  $.each($("li.person"), function(index, liPerson) {
 			var $liPerson = $(liPerson);
 			var tenantIn = new Date($liPerson.data("tenant_in")).setHours(0);
-			var tenantOut = new Date($liPerson.data("tenant_out")).setHours(23, 59, 59, 999); 
+			var tenantOut = new Date($liPerson.data("tenant_out")).setHours(23, 59, 59, 999);
 			if (tenantIn <= d && d <= tenantOut) {
 	      peopleInDate+=1;
-	    }		
+	    }
 		});
 
   	return peopleInDate;

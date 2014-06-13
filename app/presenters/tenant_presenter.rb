@@ -25,8 +25,7 @@ class TenantPresenter < Presenter
 	end
 
 	def exited_on
-		# tenant.still_in? ? I18n.l(tenant.date_out, format: :common) : _t("home.people_date_info.already_out")
-		tenant.still_in? ? tenant.date_out : _t("home.people_date_info.already_out")
+		tenant.still_in? ? _t("home.people_date_info.still_in") : tenant.date_out
 	end
 
 	def really_exited_on
