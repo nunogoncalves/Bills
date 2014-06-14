@@ -42,13 +42,13 @@
   overflow: hidden;
   position: absolute;
   box-shadow: inset 0 0 0 11px rgba(255,255,255, 0.5);
-  
+
   -webkit-transform-origin: 95% 40%;
   -moz-transform-origin: 95% 40%;
   -o-transform-origin: 95% 40%;
   -ms-transform-origin: 95% 40%;
   transform-origin: 95% 40%;
-  
+
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -75,17 +75,17 @@
   box-shadow: 0 0 1px rgba(255,255,255,0.9);
 }
 
-.ch-img-1 { 
+.ch-img-1 {
   // background-image: url(http://tympanus.net/Tutorials/CircleHoverEffects/images/7.jpg);
   z-index: 12;
 }
 
-.ch-img-2 { 
+.ch-img-2 {
   background-image: url(http://tympanus.net/Tutorials/CircleHoverEffects/images/8.jpg);
   z-index: 11;
 }
 
-.ch-img-3 { 
+.ch-img-3 {
   background-image: url(http://tympanus.net/Tutorials/CircleHoverEffects/images/9.jpg);
   z-index: 10;
 }
@@ -109,8 +109,8 @@
     padding: 22px 0 0 0;
     height: 30px;
     font-family: 'Open Sans', Arial, sans-serif;
-    text-shadow: 
-      0 0 1px #fff, 
+    text-shadow:
+      0 0 1px #fff,
       0 1px 2px rgba(0,0,0,0.3);
   }
   & h6 {
@@ -150,35 +150,40 @@
   margin: 7px auto 0;
   font-family: 'Open Sans', Arial, sans-serif;
   opacity: 0;
-  
-  -webkit-transition: 
+
+  -webkit-transition:
     -webkit-transform 0.3s ease-in-out 0.2s,
     opacity 0.3s ease-in-out 0.2s,
     background 0.2s linear 0s;
-  -moz-transition: 
+  -moz-transition:
     -moz-transform 0.3s ease-in-out 0.2s,
     opacity 0.3s ease-in-out 0.2s,
     background 0.2s linear 0s;
-  -o-transition: 
+  -o-transition:
     -o-transform 0.3s ease-in-out 0.2s,
     opacity 0.3s ease-in-out 0.2s,
     background 0.2s linear 0s;
-  -ms-transition: 
+  -ms-transition:
     -ms-transform 0.3s ease-in-out 0.2s,
     opacity 0.3s ease-in-out 0.2s,
     background 0.2s linear 0s;
-  transition: 
+  transition:
     transform 0.3s ease-in-out 0.2s,
     opacity 0.3s ease-in-out 0.2s,
     background 0.2s linear 0s;
-    
+
   -webkit-transform: translateX(60px) rotate(90deg);
   -moz-transform: translateX(60px) rotate(90deg);
   -o-transform: translateX(60px) rotate(90deg);
   -ms-transform: translateX(60px) rotate(90deg);
   transform: translateX(60px) rotate(90deg);
-    
+
   -webkit-backface-visibility: hidden;
+
+  &.edit {
+    height: 35px;
+    border-radius: 62%;
+  }
 }
 
 .ch-info p a:hover {

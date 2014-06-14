@@ -11,6 +11,7 @@ group :development do
   gem "pry"
   gem "pry-rails"
   gem "jazz_hands"
+  gem "quiet_assets", ">= 1.0.1"
 end
 
 group :assets do

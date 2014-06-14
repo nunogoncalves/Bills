@@ -4,7 +4,7 @@
 <li class="<%= bill %>" id="<%= bill %>_li" data-bill="<%= bill %>">
 	<div style="height: 200px;">
 		<div style="margin-top: 40px">
-			<span style="margin-left: 40%"><%= bill %></span>
+			<span style="margin-left: 40%"><%= t("bills.#{bill.downcase}") %></span>
 			<input id="<%= bill %>_start_input" class="<%= bill %> start datepicker" data-type="<%= bill %>" data-selected_date="" type="text" placeholder="Data de início">
 			<input id="<%= bill %>_end_input" class="<%= bill %> end datepicker" data-type="<%= bill %>"  data-selected_date="" type="text" placeholder="Data de fim">
 			<input class="price_input" data-type="<%= bill %>" type="text" placeholder="Valor da factura" onKeyUp="$.bills.billPriceChanged(this);">
