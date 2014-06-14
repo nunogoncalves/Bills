@@ -19,3 +19,7 @@ Ideas:
 - Tenant
  - Manage Bills
  - Menage personal information
+
+
+### First Shots:
+<img src="https://www.dropbox.com/s/5asxuevlbyw11kq/bills_dashboard.png">
