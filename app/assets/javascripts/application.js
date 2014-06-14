@@ -16,6 +16,8 @@
 //= require plugins/picker.date
 //= require plugins/pt_PT
 //= require plugins/highcharts-all
+//= require jquery.minicolors
+//= require jquery.minicolors.simple_form
 //= require highcharts
 //= require dates
 //= require people

@@ -1,0 +1,9 @@
+<%= simple_form_for @tenant do |f| %>
+  <%= f.input :name %>
+  <%= f.input :date_in %>
+  <%= f.input :date_out %>
+  <%= f.input :color, as: :minicolors %>
+  <%= f.input :email %>
+
+  <%= f.submit %>
+<% end %>

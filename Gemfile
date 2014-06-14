@@ -4,6 +4,8 @@ gem 'rails', '3.2.17'
 gem 'pg'
 gem 'memoist'
 gem 'jquery-rails'
+gem 'simple_form'
+gem 'jquery-minicolors-rails'
 
 group :development do
   gem "pry"

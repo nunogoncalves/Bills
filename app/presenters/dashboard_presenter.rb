@@ -26,7 +26,7 @@ class DashboardPresenter < Presenter
 			CarrieAnneMoss  CubaGoodingJr)
 
 	def tenants
-		@tenants ||= Tenant.all.map { |tenant| TenantPresenter.new(h, tenant)}
+		@tenants ||= Tenant.where("date_out is null or date_out > '2014-05-02'").map { |tenant| TenantPresenter.new(h, tenant)}
 	end
 
 	def possible_bills_names

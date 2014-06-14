@@ -1,5 +1,7 @@
 class Tenant < Person
 
+  attr_accessible :name, :date_in, :date_out, :color, :email
+
 	def still_in?
     date_out.blank? || date_out > DateTime.now
 	end
