@@ -22,4 +22,4 @@ Ideas:
 
 
 ### First Shots:
-<img src="https://www.dropbox.com/s/5asxuevlbyw11kq/bills_dashboard.png">
+<img src="https://dl.dropboxusercontent.com/u/2001692/applications/Bills/bills_dashboard.png">
