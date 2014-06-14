@@ -19,6 +19,10 @@ class TenantPresenter < Presenter
 		tenant.email
 	end
 
+	def image
+		tenant.male? ? 'http://www.bsl-lausanne.ch/wp-content/uploads/male-icon.jpg' : 'http://www.bsl-lausanne.ch/wp-content/uploads/female-icon-390x450.jpg'
+	end
+
 	def entered_on
 		# I18n.l(tenant.date_in, format: :common)
 		tenant.date_in
