@@ -5,7 +5,8 @@ gem 'pg'
 gem 'memoist'
 gem 'jquery-rails'
 gem 'simple_form'
-gem 'jquery-minicolors-rails'
+gem 'simple_enum'
+gem 'jquery-minicolors-rails', '2.1.4.0'
 
 group :development do
   gem "pry"

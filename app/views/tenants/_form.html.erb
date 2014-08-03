@@ -1,9 +1,22 @@
 <%= simple_form_for @tenant do |f| %>
   <%= f.input :name %>
-  <%= f.input :date_in %>
-  <%= f.input :date_out %>
+  <%= f.input :date_in, as: :string, input_html: { class: 'datepicker', value: f.object.date_in, }  %>
+  <%= f.input :date_out, as: :string, input_html: { class: 'datepicker', value: f.object.date_out, } %>
   <%= f.input :color, as: :minicolors %>
   <%= f.input :email %>
-  <%= f.input :gender, collection: [:male, :female] %>
+
+  <%= f.input :gender, collection: [:male, :female], input_html: { value: f.object.gender } %>
   <%= f.submit %>
 <% end %>
+
+<script>
+  $(function() {
+    $('.datepicker').pickadate({
+        max: new Date(),
+        formatSubmit: 'yyyy-mm-dd',
+        onSet: function(event) {
+          $.bills.afterDateSelected(this);
+        }
+      });
+  })
+</script>

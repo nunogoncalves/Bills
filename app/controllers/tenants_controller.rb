@@ -24,4 +24,9 @@ class TenantsController < ApplicationController
       render :new
     end
   end
+
+  def history
+    @tenants = Tenant.all
+  end
+
 end
